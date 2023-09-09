@@ -1,0 +1,274 @@
+/*
+Theme Name: MEDIANTE theme
+Author: MEDIANTE
+Author URI: https://mediante.org/
+Description: The 2020 theme for MEDIANTE.
+Text Domain: mediante
+Version: 1.4.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: white, black, simple, art, mediante
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+@font-face {
+    font-family: 'mediante';
+    src: url('assets/ArialMT-Light.ttf') format('truetype');
+}
+
+body {
+    height: 100vh;
+    font-size: 1rem;
+    font-family: mediante !important;
+}
+
+footer {
+    min-height: 7em;
+    background-image: url(images/bg.png);
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    background-size: 7em;
+}
+
+@media all and (min-width: 50px) {
+    body, h1, h2, h3 {
+        font-size: 0.7rem;
+    }
+
+    .carousel-item img {
+        /*21:9 aspect ratio*/
+        height: calc((100vw - 20px) * 0.4286)
+    }
+
+    .post-link {
+        padding: 3px;
+    }
+}
+
+@media all and (min-width: 275px) {
+    body, h1, h2, h3 {
+        font-size: 0.8rem;
+    }
+
+    .carousel-item img {
+        /*21:9 aspect ratio*/
+        height: calc((100vw - 20px) * 0.4286)
+    }
+
+    .post-link {
+        padding: 3px;
+    }
+}
+
+@media all and (min-width: 768px) {
+    body, h1, h2, h3 {
+        font-size: 0.9rem;
+    }
+
+    .carousel-item img {
+        /*21:9 aspect ratio*/
+        height: calc((75vw - 20px) * 0.4286)
+    }
+
+    .post-link {
+        padding: 3px;
+    }
+}
+
+@media all and (min-width: 992px) {
+    body, h1, h2, h3 {
+        font-size: 0.9rem;
+    }
+
+    .carousel-item img {
+        /*21:9 aspect ratio*/
+        height: calc((50vw - 20px) * 0.4286)
+    }
+
+    .post-link {
+        padding: 5px;
+    }
+}
+
+@media all and (min-width: 1200px) {
+    body, h1, h2, h3 {
+        font-size: 1rem;
+    }
+
+    .carousel-item img {
+        /*21:9 aspect ratio*/
+        height: calc((40vw - 20px) * 0.4286)
+    }
+
+    .post-link {
+        padding: 8px;
+    }
+}
+
+::-moz-selection {
+    background: lightgrey;
+}
+
+::selection {
+    background: lightgrey;
+}
+
+.form-control:focus {
+    border-color: lightgray !important;
+    box-shadow: 0 0 5px rgb(90 90 90 / 50%) !important;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: calc(3.5em - 21px);
+    right: calc(50vw - 19px);
+    display: none;
+}
+
+.carousel-item img {
+    object-fit: cover
+}
+
+.article-content a, .comments-area a {
+    text-decoration: underline;
+}
+
+/* ARROWS FOR NAV BETWEEN ARTICLES */
+.post-link {
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+}
+
+.post-link--left {
+    left: 0;
+    border-radius: 0 5px 5px 0;
+}
+
+.post-link--right {
+    right: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+/* READING PROGRESS BAR */
+.progress-container {
+    background: #f8f9fa;
+    height: 4px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.progress-bar {
+    background: #343a40;
+    height: 4px;
+    width: 0%;
+}
+
+/* BLACKQUOTE */
+blockquote {
+    border-left: 3px solid #343a40;
+    font-style: italic;
+    line-height: 1.8em;
+    padding: 1em 2em;
+    position: relative;
+    z-index: 0;
+}
+
+blockquote:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -4px;
+    height: 2em;
+    background-color: #fff;
+    width: 5px;
+    margin-top: -1em;
+}
+
+blockquote:after {
+    content: "\f10e";
+    font-family: "Font Awesome 5 Free";
+    font-style: normal;
+    font-weight: 900;
+    -webkit-font-smoothing: antialiased;
+    position: absolute;
+    top: 50%;
+    left: -0.5em;
+    color: #343a40;
+    line-height: 1em;
+    text-align: center;
+    text-indent: -2px;
+    width: 1em;
+    margin-top: -0.5em;
+}
+
+blockquote cite {
+    display: block;
+    font-size: 0.75em;
+    line-height: 1.8em;
+    margin-top: 1em;
+}
+
+blockquote cite:before {
+    content: "~";
+    margin-right: 0.3rem;
+}
+
+/* YT EMEBED VIDEO */
+.is-type-video .wp-block-embed__wrapper {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%;
+    margin-top: 1rem;
+}
+
+.is-type-video .wp-block-embed__wrapper iframe, .is-type-video .wp-block-embed__wrapper object, .is-type-video .wp-block-embed__wrapper embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+}
+
+/* COMMENTS */
+ul.comment-list, ul.children {
+    list-style-type: none;
+}
+
+/* RESPONSIVE CORRECTIONS */
+article img {
+    width: 100%;
+}
+
+.grecaptcha-badge {
+    visibility: collapse !important;
+}
+
+.pulse {
+    -webkit-animation: pulse 2s infinite;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+
+    50% {
+        -webkit-transform: translate(0, 10px);
+        transform: translate(0, 10px);
+    }
+
+    100% {
+        -webkit-transform: translate(0, 0);
+        transform: translate(0, 0);
+    }
+}
